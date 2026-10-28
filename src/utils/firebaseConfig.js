@@ -1,4 +1,3 @@
-// New Firebase Configration
 const firebaseConfig = {
   apiKey: "AIzaSyA-LadIRGGF6LmKOqUWPxfK9YtsQqeHFSE",
   authDomain: "todo-list-0702.firebaseapp.com",
