@@ -16,8 +16,6 @@ export const Home = () => {
             <Route index element={<Login />}></Route>
             <Route path="/todos" element={<Todos />} />
             <Route path="/todos/createTodo" element={<CreateTodo />} />
-            <Route path="/todos/edit/:id" element={<Todos />} />
-            <Route path="/todos/delete/:id" element={<Todos />} />
             <Route path="/register" element={<SignUp />} />
             <Route path="about" element={<AboutUS />} />
             <Route path="*" element={<Error />} />

@@ -55,7 +55,7 @@ export const signInWithGoogle = (Id) => {
       }
       dispatch({ type: MESSAGES.GOOGLE_LOGIN_SUCCESSFULLY });
     } catch (err) {
-      dispatch({ type: MESSAGES.GOOGLE_LOGIN_ERROR, error: `: ${err.code}` });
+      dispatch({ type: MESSAGES.GOOGLE_LOGIN_ERROR, error: err.code });
     }
   };
 };
