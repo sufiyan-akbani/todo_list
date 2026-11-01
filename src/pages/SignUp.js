@@ -52,7 +52,7 @@ const SignUp = () => {
         return;
       } else {
         dispatch(
-          registerWithEmailAndPassword(Id, fname, lname, dob, email, password)
+          registerWithEmailAndPassword(Id, fname, lname, dob, email, password),
         );
       }
     }
@@ -68,138 +68,128 @@ const SignUp = () => {
     }
   }, [user, loading, navigate]);
   return (
-    <>
-      <section className="text-center text-lg-start">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-5 mb-lg-0">
-              <div className="">
-                <div className="card-body px-5 text-center">
-                  <h2 className="fw-bold text-primary">Sign up now</h2>
-                  <form onSubmit={(e) => e.preventDefault()}>
-                    <input type="hidden" value={Id} />
-                    <div className="row">
-                      <div className="col-md-6 p-2">
-                        <div className="form-outline">
-                          <label
-                            className="form-label m-0"
-                            htmlFor="form3Example1"
-                          >
-                            First name<span className="text-danger">*</span>
-                          </label>
-                          <input
-                            type="text"
-                            id="form3Example1"
-                            className="form-control"
-                            value={fname}
-                            onChange={(e) => setFname(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-6 p-2">
-                        <div className="form-outline">
-                          <label
-                            className="form-label m-0"
-                            htmlFor="form3Example2"
-                          >
-                            Last name<span className="text-danger">*</span>
-                          </label>
-                          <input
-                            type="text"
-                            id="form3Example2"
-                            className="form-control"
-                            value={lname}
-                            onChange={(e) => setLname(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="form-outline p-2">
-                      <label className="form-label m-0" htmlFor="form3Example3">
-                        Email address<span className="text-danger">*</span>
+    <section>
+      <div className="height-90vh d-flex justify-content-center align-items-center flex-md-row flex-column flex-wrap my-2">
+        <div className="col-lg-5 col-12">
+          <div className="">
+            <div className="card-body px-5">
+              <h2 className="fw-bold text-primary text-center">Sign up now</h2>
+              <form onSubmit={(e) => e.preventDefault()}>
+                <input type="hidden" value={Id} />
+                <div className="row">
+                  <div className="col-md-6 py-1">
+                    <div className="form-outline">
+                      <label className="mb-1" htmlFor="form3Example1">
+                        First name<span className="text-danger">*</span>
                       </label>
                       <input
-                        type="email"
-                        id="form3Example3"
+                        type="text"
+                        id="form3Example1"
                         className="form-control"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={fname}
+                        onChange={(e) => setFname(e.target.value)}
                       />
                     </div>
-
-                    <div className="form-outline p-2">
-                      <label className="form-label m-0" htmlFor="form3Example3">
-                        Date of Birth
+                  </div>
+                  <div className="col-md-6 py-1">
+                    <div className="form-outline">
+                      <label className="mb-1" htmlFor="form3Example2">
+                        Last name<span className="text-danger">*</span>
                       </label>
                       <input
-                        type="date"
-                        id="form3Example3"
+                        type="text"
+                        id="form3Example2"
                         className="form-control"
-                        value={dob}
-                        onChange={(e) => setDob(e.target.value)}
+                        value={lname}
+                        onChange={(e) => setLname(e.target.value)}
                       />
                     </div>
-                    <div className="form-outline p-2">
-                      <label className="form-label m-0" htmlFor="form3Example4">
-                        Password<span className="text-danger">*</span>
-                      </label>
-                      <input
-                        type="password"
-                        id="form3Example4"
-                        className="form-control"
-                        value={password}
-                        title={MESSAGES.PASSWORD_RULE_MESSAGE}
-                        onChange={(e) => setPassword(e.target.value)}
-                      />
-                    </div>
-                    <div className="form-outline p-1">
-                      <label className="form-label m-0" htmlFor="form3Example4">
-                        Confirm Password<span className="text-danger">*</span>
-                      </label>
-                      <input
-                        type=""
-                        id="form3Example4"
-                        className="form-control"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                      />
-                    </div>
-                    <button
-                      to="/"
-                      type="submit"
-                      className="btn btn-primary btn-block mb-1"
-                      onClick={() => register()}
-                    >
-                      Sign up
-                    </button>
-                    <div className="text-center">
-                      <p className="mb-0">or sign up with:</p>
-                      <button
-                        type="button"
-                        className="btn btn-outline-primary btn-floating mx-1"
-                        onClick={(Id) => handleGoogleSignup(Id)}
-                      >
-                        <i className="fa-brands fa-google"></i>
-                      </button>
-                      <p className="mb-0">
-                        Already have an account? <Link to="/">Login</Link> now.
-                      </p>
-                    </div>
-                  </form>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="col-md-9 col-lg-7 col-xl-7">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                className="img-fluid"
-                alt="Sign up"
-              />
+                <div className="form-outline py-1">
+                  <label className="mb-1" htmlFor="form3Example3">
+                    Email address<span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="form3Example3"
+                    className="form-control"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+
+                <div className="form-outline py-1">
+                  <label className="mb-1" htmlFor="form3Example3">
+                    Date of Birth
+                  </label>
+                  <input
+                    type="date"
+                    id="form3Example3"
+                    className="form-control"
+                    value={dob}
+                    onChange={(e) => setDob(e.target.value)}
+                  />
+                </div>
+                <div className="form-outline py-1">
+                  <label className="mb-1" htmlFor="form3Example4">
+                    Password<span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="password"
+                    id="form3Example4"
+                    className="form-control"
+                    value={password}
+                    title={MESSAGES.PASSWORD_RULE_MESSAGE}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+                <div className="form-outline py-1 mb-2">
+                  <label className="mb-1" htmlFor="form3Example4">
+                    Confirm Password<span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type=""
+                    id="form3Example4"
+                    className="form-control"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  />
+                </div>
+                <button
+                  to="/"
+                  type="submit"
+                  className="btn btn-primary btn-block"
+                  onClick={() => register()}
+                >
+                  Sign up
+                </button>
+                <div className="text-center">
+                  <p className="mb-0">or sign up with:</p>
+                  <button
+                    type="button"
+                    className="btn btn-outline-primary btn-floating my-1"
+                    onClick={(Id) => handleGoogleSignup(Id)}
+                  >
+                    <i className="fa-brands fa-google"></i>
+                  </button>
+                  <p className="mb-0">
+                    Already have an account? <Link to="/">Login</Link> now.
+                  </p>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-      </section>
-    </>
+        <div className="col-lg-5 col-12">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            className="img-fluid"
+            alt="Sign up"
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 

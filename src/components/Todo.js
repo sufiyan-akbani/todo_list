@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { GrInProgress } from "react-icons/gr";
+import { SiGoogletasks } from "react-icons/si";
+import { MdOutlineNotStarted } from "react-icons/md";
 import DeleteToDo from "./DeleteToDo";
 import EditToDo from "./EditToDo";
 import { useDispatch } from "react-redux";
 
-const Todo = ({
-  todo,
-  databaseId,
-  todos,
-  fetchUserTodos,
-  index
-}) => {
+const Todo = ({ todo, databaseId, todos, fetchUserTodos, index }) => {
   const [deleteDisable, setDeleteDisable] = useState("");
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,7 +17,7 @@ const Todo = ({
       setDeleteDisable("");
     }
     dispatch(fetchUserTodos());
-  },[dispatch, fetchUserTodos, todo.status]);
+  }, [dispatch, fetchUserTodos, todo.status]);
   return (
     <>
       <tbody>
@@ -28,7 +25,16 @@ const Todo = ({
           <th scope="row">{index + 1}</th>
           <td>{todo.title}</td>
           <td>{todo.description}</td>
-          <td>{todo.status}</td>
+          <td>
+            {todo.status === "Not Started" ? (
+              <MdOutlineNotStarted className="text-info" />
+            ) : todo.status === "In Progress" ? (
+              <GrInProgress className="text-warning" />
+            ) : (
+              <SiGoogletasks className="text-success" />
+            )}{" "}
+            {todo.status}
+          </td>
           <td>
             <Link
               to={`/todos/delete/${todo.id}`}
