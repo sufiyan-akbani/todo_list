@@ -1,4 +1,5 @@
 import React from "react";
+import { IoLogOut } from "react-icons/io5";
 import { Model } from "./Model";
 import { logout } from "../action/authAction";
 import { useDispatch } from "react-redux";
@@ -6,18 +7,19 @@ const Profile = ({ userName, user }) => {
   const dispatch = useDispatch();
   if (user) {
     return (
-      <div className="pt-1 text-white">
-        <span title={`User : ${userName}`}>
+      <div className="text-white">
+        <span title={`User : ${userName}`} className="me-2">
           <b>
             <i className="fa-regular fa-user"></i> {userName} {}
           </b>
         </span>
         <button
           type="button"
-          className="btn btn-danger "
+          className="btn btn-danger text-center "
           data-bs-toggle="modal"
           data-bs-target={`#LogoutModal-1`}
         >
+          <IoLogOut className="fs-4" />
           Logout
         </button>
         <Model modelTitle={"Logout"} todoId={1}>
