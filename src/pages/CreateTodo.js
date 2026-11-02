@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { IoCreateSharp } from "react-icons/io5";
+import { IoArrowBackCircle } from "react-icons/io5";
+import { IoMdAddCircleOutline } from "react-icons/io";
 import { auth, db } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { addNewTodo, fetchUserTodos } from "../store/todoSlice";
 import { query, collection, where, onSnapshot } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -46,9 +49,16 @@ const CreateTodo = () => {
     navigate("/todos");
   };
   return (
-    <div className="col-12">
-      <div className="col-6 text-center m-auto">
-        <h1 className="card-title my-3 text-primary">Create/Add todo</h1>
+    <div className="mx-3 height-90vh d-flex justify-content-center align-items-center">
+      <div className="col-lg-6 text-center m-auto">
+        <h1 className="card-title my-3 text-primary text-center"><IoCreateSharp className="mb-1"/> Create/Add todo</h1>
+        <Link
+          to="/"
+          className="btn btn-primary my-2 w-md-25"
+        >
+          <IoArrowBackCircle className="fs-4 me-1 mb-1"/>
+          Back to Home
+        </Link>
         <div className="mb-3 text-start col-12">
           <label htmlFor="exampleFormControlInput1" className="form-label">
             To-do Title<span className="text-danger">*</span>
@@ -88,9 +98,10 @@ const CreateTodo = () => {
         </fieldset>
         <button
           type="button"
-          className="btn btn-outline-primary btn-lg"
+          className="btn btn-outline-primary btn-lg mt-2 w-50"
           onClick={() => addTodo()}
         >
+          <IoMdAddCircleOutline className="fs-4 me-1 mb-1"/>
           Add
         </button>
         <p className="mb-1"></p>

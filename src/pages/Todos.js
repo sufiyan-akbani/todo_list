@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { auth, db } from "../utils/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { IoCreateSharp } from "react-icons/io5";
 import { query, collection, where, onSnapshot } from "firebase/firestore";
+import { auth, db } from "../utils/firebase";
 import Todo from "../components/Todo";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUserTodos } from "../store/todoSlice";
@@ -79,7 +80,7 @@ const Todos = () => {
         <div className="container h-75">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="pt-3">
-              <div className="card rounded-3">
+              <div className="card rounded-3 shadow-lg">
                 <div className="card-body p-4 text-center">
                   <h1 className="my-3 pb-3 text-primary">
                     <i className="fa-solid fa-list-check"></i> To Do App
@@ -90,7 +91,7 @@ const Todos = () => {
                       type="submit"
                       className="btn btn-primary btn-lg"
                     >
-                      Create Todo
+                      <IoCreateSharp className="mb-1"/> Create Todo
                     </Link>
                   </div>
                   <hr></hr>
