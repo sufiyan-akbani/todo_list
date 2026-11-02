@@ -55,7 +55,7 @@ const Login = () => {
       <div className="col-md-8 col-lg-5 border border-1 border-light rounded-3 p-4 shadow-lg mx-lg-3">
         <form>
           <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-            <p className="lead fw-normal mb-0 me-3">Sign in with</p>
+            <p className="lead fw-normal mb-0 me-3">Sign in with:</p>
             <button
               type="button"
               className="btn btn-primary btn-floating mx-1"

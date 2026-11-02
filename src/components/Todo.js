@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { GrInProgress } from "react-icons/gr";
 import { SiGoogletasks } from "react-icons/si";
 import { MdOutlineNotStarted } from "react-icons/md";
@@ -21,7 +20,11 @@ const Todo = ({ todo, databaseId, todos, fetchUserTodos, index }) => {
   return (
     <>
       <tbody>
-        <tr>
+        <tr
+          className={
+            todo.status === "Completed" ? "text-decoration-line-through" : ""
+          }
+        >
           <th scope="row">{index + 1}</th>
           <td>{todo.title}</td>
           <td>{todo.description}</td>
@@ -36,24 +39,22 @@ const Todo = ({ todo, databaseId, todos, fetchUserTodos, index }) => {
             {todo.status}
           </td>
           <td>
-            <Link
-              to={`/todos/delete/${todo.id}`}
-              type="submit"
-              className={`btn btn-outline-danger btn-sm mx-2 ${deleteDisable}`}
-              data-bs-toggle="modal"
-              data-bs-target={`#DeleteModal-${todo.id}`}
-            >
-              <i className="fa-regular fa-trash-can"></i>
-            </Link>
-            <Link
-              to={`/todos/edit/${todo.id}`}
-              type="submit"
+            {todo.status !== "Completed" && (
+              <button
+                className={`btn btn-outline-danger btn-sm mx-2 ${deleteDisable}`}
+                data-bs-toggle="modal"
+                data-bs-target={`#DeleteModal-${todo.id}`}
+              >
+                <i className="fa-regular fa-trash-can"></i>
+              </button>
+            )}
+            <button
               className="btn btn-outline-info btn-sm mt-1 mt-sm-0"
               data-bs-toggle="modal"
               data-bs-target={`#EditModal-${todo.id}`}
             >
               <i className="fa-regular fa-pen-to-square"></i>
-            </Link>
+            </button>
           </td>
         </tr>
       </tbody>

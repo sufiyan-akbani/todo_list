@@ -91,6 +91,13 @@
   .height-90vh {
     height: auto;
   }
+
+  .word-wrap {
+    width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 @media (max-width: 991.98px) {

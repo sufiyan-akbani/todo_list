@@ -7,8 +7,8 @@ const Profile = ({ userName, user }) => {
   const dispatch = useDispatch();
   if (user) {
     return (
-      <div className="text-white">
-        <span title={`User : ${userName}`} className="me-2">
+      <div className="text-white d-flex align-items-center">
+        <span title={`User : ${userName}`} className="me-2 word-wrap">
           <b>
             <i className="fa-regular fa-user"></i> {userName} {}
           </b>
@@ -19,7 +19,7 @@ const Profile = ({ userName, user }) => {
           data-bs-toggle="modal"
           data-bs-target={`#LogoutModal-1`}
         >
-          <IoLogOut className="fs-4" />
+          <IoLogOut className="fs-4 mb-1" />
           Logout
         </button>
         <Model modelTitle={"Logout"} todoId={1}>
