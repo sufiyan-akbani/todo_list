@@ -5,7 +5,7 @@ export const Model = ({ modelTitle, todoId, children, onClose }) => {
     <div
       className="modal fade"
       id={`${modelTitle}Modal-${todoId}`}
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
