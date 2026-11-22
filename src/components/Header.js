@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <nav className="navbar bg-primary px-2 col-12 ">
       <Link to={linkTo} className="navbar-brand text-white ms-2">
-        <img src={require("../assets/img/to-do-list.png")} alt="ToDo list" className="img-fluid mb-1" width="30" height="30" /> Todo List
+        <img src={require("../assets/img/to-do-list.png")} alt="ToDo list App Logo" className="img-fluid mb-1" width="30" height="30" /> Todo List
       </Link>
       <Profile userName={name} user={user} />
     </nav>
