@@ -70,20 +70,20 @@ const Login = () => {
           <div className="form-outline mb-4">
             <input
               type="email"
-              id="form3Example3"
+              id="username"
               className="form-control form-control-lg"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter a Email address or Username"
+              placeholder="Enter a registered email address"
             />
-            <label className="my-2" htmlFor="form3Example3">
-              Email or Username
+            <label className="my-2" htmlFor="username">
+              Email Id
             </label>
           </div>
           <div className="form-outline mb-3">
             <input
               type="password"
-              id="form3Example4"
+              id="password"
               className="form-control form-control-lg"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

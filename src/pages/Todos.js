@@ -83,7 +83,7 @@ const Todos = () => {
               <div className="card rounded-3 shadow-lg">
                 <div className="card-body p-4 text-center">
                   <h1 className="my-3 pb-3 text-primary">
-                    <i className="fa-solid fa-list-check"></i> To Do App
+                    <i className="fa-solid fa-list-check"></i> Todo List App
                   </h1>
                   <div className="col-12 me-5">
                     <Link
